@@ -63,6 +63,7 @@ const Sidebar = () => {
           backgroundColor: '#1a365d',
           color: '#fff',
           transition: 'width 0.2s ease-in-out',
+          borderRight: 'none',
         },
       }}
     >

@@ -40,7 +40,7 @@ const Dashboard = () => {
       </Box>
 
       {/* Stats Row */}
-      <Grid container spacing={3} sx={{ mb: 3 }}>
+      <Grid container spacing={2} sx={{ mb: 3 }}>
         <Grid size={{ xs: 12, sm: 6, md: 4, lg: 2 }}>
           <StatCard
             title="Today's Complaints"

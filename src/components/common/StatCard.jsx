@@ -34,40 +34,41 @@ const StatCard = ({
         },
       }}
     >
-      <CardContent sx={{ p: 3 }}>
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-          <Box sx={{ flex: 1 }}>
+      <CardContent sx={{ p: 2 }}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 1 }}>
+          <Box sx={{ flex: 1, minWidth: 0 }}>
             <Typography
               variant="body2"
               color="text.secondary"
               fontWeight={500}
-              sx={{ mb: 1 }}
+              sx={{ mb: 0.5, fontSize: '0.75rem' }}
+              noWrap
             >
               {title}
             </Typography>
-            <Typography variant="h3" fontWeight={700} color="text.primary" sx={{ mb: 0.5 }}>
+            <Typography variant="h4" fontWeight={700} color="text.primary" sx={{ mb: 0.25, fontSize: '1.5rem' }}>
               {value}
             </Typography>
             {subtitle && (
-              <Typography variant="body2" color="text.secondary">
+              <Typography variant="caption" color="text.secondary">
                 {subtitle}
               </Typography>
             )}
             {trendValue && (
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mt: 1 }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mt: 0.5, flexWrap: 'wrap' }}>
                 {isPositive ? (
-                  <TrendingUp sx={{ fontSize: 18, color: '#2f855a' }} />
+                  <TrendingUp sx={{ fontSize: 14, color: '#2f855a' }} />
                 ) : (
-                  <TrendingDown sx={{ fontSize: 18, color: '#c53030' }} />
+                  <TrendingDown sx={{ fontSize: 14, color: '#c53030' }} />
                 )}
                 <Typography
-                  variant="body2"
+                  variant="caption"
                   fontWeight={600}
                   sx={{ color: isPositive ? '#2f855a' : '#c53030' }}
                 >
                   {trendValue}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="caption" color="text.secondary" sx={{ fontSize: '0.65rem' }}>
                   vs last week
                 </Typography>
               </Box>
@@ -77,8 +78,9 @@ const StatCard = ({
             sx={{
               bgcolor: bgcolor || colors.light,
               color: colors.main,
-              width: 56,
-              height: 56,
+              width: 44,
+              height: 44,
+              flexShrink: 0,
             }}
           >
             {icon}

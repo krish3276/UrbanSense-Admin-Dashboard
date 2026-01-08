@@ -14,13 +14,15 @@ const Layout = ({ children, title = 'Dashboard' }) => {
         component="main"
         sx={{
           flexGrow: 1,
-          ml: sidebarOpen ? '260px' : 0,
-          transition: 'margin-left 0.2s ease-in-out',
+          width: sidebarOpen ? 'calc(100% - 260px)' : '100%',
+          marginLeft: 0,
+          transition: 'width 0.2s ease-in-out',
           minHeight: '100vh',
+          overflow: 'hidden',
         }}
       >
         <Toolbar /> {/* Spacer for fixed AppBar */}
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ p: 2.5, pl: 2, maxWidth: '100%', overflowX: 'auto' }}>
           {children}
         </Box>
       </Box>
